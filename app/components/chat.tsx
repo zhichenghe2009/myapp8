@@ -597,27 +597,27 @@ export function Chat() {
     .concat(
       isLoading
         ? [
-            {
-              ...createMessage({
-                role: "assistant",
-                content: "……",
-              }),
-              preview: true,
-            },
-          ]
+          {
+            ...createMessage({
+              role: "assistant",
+              content: "……",
+            }),
+            preview: true,
+          },
+        ]
         : [],
     )
     .concat(
       userInput.length > 0 && config.sendPreviewBubble
         ? [
-            {
-              ...createMessage({
-                role: "user",
-                content: userInput,
-              }),
-              preview: true,
-            },
-          ]
+          {
+            ...createMessage({
+              role: "user",
+              content: userInput,
+            }),
+            preview: true,
+          },
+        ]
         : [],
     );
 
@@ -832,7 +832,8 @@ export function Chat() {
           <textarea
             ref={inputRef}
             className={styles["chat-input"]}
-            placeholder={Locale.Chat.Input(submitKey)}
+            // placeholder={Locale.Chat.Input(submitKey)}
+            placeholder='输入 / 获取各种提问样列摸版  点击小熊猫选择各种会话摸版 点击互联网图标开启联网功能'
             onInput={(e) => onInput(e.currentTarget.value)}
             value={userInput}
             onKeyDown={onInputKeyDown}
